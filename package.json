@@ -4,7 +4,10 @@
   "description": "frontend app resto with react and tailwind",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "rm -rf ./dist",
+    "start": " webpack serve --hot --mode development",
+    "dev": "webpack  --mode development ",
+    "build": "webpack --mode production"
   },
   "repository": {
     "type": "git",
