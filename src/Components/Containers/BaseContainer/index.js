@@ -2,7 +2,7 @@ import { React } from "./../../libraries";
 
 const BaseContainer = ({ children }) => {
   return (
-    <div className="BaseContainer">
+    <div className="container mx-auto">
       {children}
     </div>
   )
