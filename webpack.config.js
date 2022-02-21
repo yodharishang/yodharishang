@@ -4,9 +4,9 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 //const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+//const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 //const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
-const HtmlWebpackInjector = require('html-webpack-injector');
+//onst HtmlWebpackInjector = require('html-webpack-injector');
 
 const config = {
   entry: [
@@ -50,11 +50,11 @@ const config = {
       }
     ]
   },
-  resolve: {
-    alias: {
-      'react-dom': '@hot-loader/react-dom',
-    },
-  },
+  // resolve: {
+  //   alias: {
+  //     'react-dom': '@hot-loader/react-dom',
+  //   },
+  // },
   devServer: {
     'static': {
       directory: './dist'
@@ -82,7 +82,7 @@ const config = {
     // }),
     new HtmlWebpackPlugin({
       // templateContent: ({ htmlWebpackPlugin }) => '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><title>' + htmlWebpackPlugin.options.title + '</title></head><body><div id=\"app\"></div></body></html>',
-      title:"NazzgorDev development",
+      title:"openStreetResto development",
       template: './src/index.html',
       // filename:'[name].html'
       // alwaysWriteToDisk: true,
@@ -91,11 +91,11 @@ const config = {
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en/),
     //new CleanWebpackPlugin(),
     new MiniCssExtractPlugin(),
-    new BundleAnalyzerPlugin({
-      analyzerMode: 'static',
-      openAnalyzer: false,
-    }),
-  new HtmlWebpackInjector()
+    // new BundleAnalyzerPlugin({
+    //   analyzerMode: 'static',
+    //   openAnalyzer: false,
+    // }),
+  // new HtmlWebpackInjector()
   ],
   // optimization: {
   //   runtimeChunk: 'single',

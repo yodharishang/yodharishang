@@ -1,7 +1,7 @@
 import { hot } from 'react-hot-loader/root';
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { appRoutes } from './routes';
+import { appRoutes } from './Routes';
 
 class App extends React.Component {
   render() {
