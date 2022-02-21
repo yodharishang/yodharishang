@@ -50,11 +50,11 @@ const config = {
       }
     ]
   },
-  // resolve: {
-  //   alias: {
-  //     'react-dom': '@hot-loader/react-dom',
-  //   },
-  // },
+  resolve: {
+    alias: {
+      'react-dom': '@hot-loader/react-dom',
+    },
+  },
   devServer: {
     'static': {
       directory: './dist'
