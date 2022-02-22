@@ -5,6 +5,7 @@ function Header({children}){
 		<>
 		<header>
 		<h1>Ini Header</h1>
+		{children}
 		</header>
 		</>
   );
