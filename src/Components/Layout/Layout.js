@@ -1,12 +1,18 @@
 import React from 'react';
+import {BaseContainer} from '../Containers';
+import {Header} from '../Header';
+import {Footer} from '../Footer';
 
-function Layout(){
+function Layout({children}){
 	return(
-		<div>
-		<h1 className="text-red-600">Wellcome to simpleReact Blogs..</h1>
-		</div>
-
-	);
-}
+		<>
+		<BaseContainer>
+			<Header />
+			{children}
+			<Footer />
+		</BaseContainer>
+		</>
+   );
+ }
 
 export default Layout;

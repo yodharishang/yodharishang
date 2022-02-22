@@ -4,7 +4,7 @@ function Header({children}){
 	return(
 		<>
 		<header>
-		{children}
+		<h1>Ini Header</h1>
 		</header>
 		</>
   );

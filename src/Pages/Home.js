@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {Layout} from '../Components';
 
 function Home(){
 	return(
@@ -35,7 +35,6 @@ function Home(){
           </div>
         </div>
        </section>
-
       
     </>
 	);
