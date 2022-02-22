@@ -60,7 +60,7 @@ const config = {
     open: true,
     watchFiles: ['dist/**/*'],
     hot:true,
-    historyApiFallback:true,   
+    historyApiFallback:true,
     onListening: function (devServer) {
       if (!devServer) {
         throw new Error('webpack-dev-server is not defined');
@@ -69,6 +69,10 @@ const config = {
       const port = devServer.server.address().port;
       console.log('Listening on port:', port);
     },
+    client:{
+      overlay:true,
+      reconnect:true
+    }
   },
   
   plugins: [
