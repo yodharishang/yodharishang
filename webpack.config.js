@@ -1,12 +1,10 @@
 const webpack = require('webpack');
 const path = require('path');
-//const CopyPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-//const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 //const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-//const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
-//onst HtmlWebpackInjector = require('html-webpack-injector');
+//const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+//const CopyPlugin = require('copy-webpack-plugin');
 
 const config = {
   entry: [
@@ -62,7 +60,7 @@ const config = {
     open: true,
     watchFiles: ['dist/**/*'],
     hot:true,
-    historyApiFallback:true,   
+    historyApiFallback:true,
     onListening: function (devServer) {
       if (!devServer) {
         throw new Error('webpack-dev-server is not defined');
@@ -71,22 +69,21 @@ const config = {
       const port = devServer.server.address().port;
       console.log('Listening on port:', port);
     },
+    client:{
+      overlay:true,
+      reconnect:true
+    }
   },
   
   plugins: [
-//   new HtmlWebpackHarddiskPlugin({
-//   outputPath: path.resolve(__dirname, 'dist')
-// }),
-    // new CopyPlugin({
-    //   patterns: [{ from: 'src/index.html' }],
-    // }),
+  //    new CopyPlugin({
+  //     patterns: [{ from: 'src/index.html' }],
+  // }),
     new HtmlWebpackPlugin({
       // templateContent: ({ htmlWebpackPlugin }) => '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><title>' + htmlWebpackPlugin.options.title + '</title></head><body><div id=\"app\"></div></body></html>',
       title:"openStreetResto development",
       template: './src/index.html',
-      // filename:'[name].html'
-      // alwaysWriteToDisk: true,
-        // chunks: '[name].js'
+      
     }),
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en/),
     //new CleanWebpackPlugin(),
@@ -95,8 +92,7 @@ const config = {
     //   analyzerMode: 'static',
     //   openAnalyzer: false,
     // }),
-  // new HtmlWebpackInjector()
-  ],
+   ],
   // optimization: {
   //   runtimeChunk: 'single',
   //   splitChunks: {
@@ -114,7 +110,7 @@ const config = {
 module.exports = (env, argv) => {
   if (argv.hot) {
     // Cannot use 'contenthash' when hot reloading is enabled.
-    config.output.filename = '[name].js';
+    config.output.filename = '[name].[hash].js';
     
   }
   if (argv.mode === 'development') {

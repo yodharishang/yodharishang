@@ -1,3 +1,8 @@
-export * from "./atoms";
-export * from "./molecules";
-export * from "./organisms";
+import {Layout} from './Layout';
+
+export {
+	Layout
+
+};
+
+

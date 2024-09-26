@@ -1,8 +1,8 @@
-import { React } from "./../../libraries";
+import  React  from "react";
 
 const BaseContainer = ({ children }) => {
   return (
-    <div className="BaseContainer">
+    <div className="container mx-auto">
       {children}
     </div>
   )
